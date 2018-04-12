@@ -1,3 +1,11 @@
+# Ask for the administrator password upfront
+sudo -v
+
+# Enable full keyboard access to all controls
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+
+
 # Check for Homebrew,
 # Install if we don't have it
 if test ! $(which brew); then
