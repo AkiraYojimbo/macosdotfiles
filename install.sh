@@ -16,12 +16,6 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
-# Increase grid spacing for icons on the desktop and in other icon views
-# NOT WORKING
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
-
 # Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
@@ -109,10 +103,10 @@ end tell
 EOD
 
 # Put Dock on the left
-defaults write com.apple.dock.orientation left
+defaults write com.apple.dock 'orientation' -string "left"
 
 # Restart the Dock for various changes to take effect
-killall -HUP Dock
+killall Dock
 
 # Check for Homebrew,
 # Install if we don't have it
