@@ -105,6 +105,12 @@ EOD
 # Put Dock on the left
 defaults write com.apple.dock 'orientation' -string "left"
 
+# Remove default apps from the Dock
+defaults write com.apple.dock persistent-apps -array
+
+# Set Dock size
+defaults write com.apple.dock tilesize -int 36
+
 # Restart the Dock for various changes to take effect
 killall Dock
 
